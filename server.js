@@ -3,6 +3,7 @@ var http = require("http")
 
 var router = Router()
 
+var PORT = process.env["PORT"] || 8000
 
 router.addRoute("/foo", function (req, res) {
     res.end("foo")
@@ -14,6 +15,6 @@ router.addRoute("/bar", function (req, res, opts) {
 
 var server = http.createServer(router)
 
-server.listen(8000, function () {
+server.listen(PORT, function () {
    console.log('server started!!!')
 })
